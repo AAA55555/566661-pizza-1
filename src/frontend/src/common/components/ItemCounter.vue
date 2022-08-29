@@ -3,7 +3,7 @@
     <button
       type="button"
       class="counter__button counter__button--minus"
-      :disabled="getCount"
+      :disabled="decrementDisabled"
       @click="$emit('minusCount')"
     >
       <span class="visually-hidden">{{ textBtnFirst }}</span>
@@ -19,7 +19,7 @@
       type="button"
       class="counter__button counter__button--plus"
       @click="$emit('plusCount')"
-      :disabled="!isDisabled"
+      :disabled="!incrementDisabled"
     >
       <span class="visually-hidden">{{ textBtnSecond }}</span>
     </button>
@@ -52,10 +52,10 @@ export default {
     },
   },
   computed: {
-    getCount() {
+    decrementDisabled() {
       return this.count === this.minCount;
     },
-    isDisabled() {
+    incrementDisabled() {
       return this.count < this.maxCount;
     },
   },

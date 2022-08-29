@@ -30,8 +30,8 @@ export default [
     meta: { layout: "AppLayoutMain" },
   },
   {
-    path: "/account/login",
-    name: "Login",
+    path: "/profile/login",
+    name: "ProfileLogin",
     component: () => import("../views/Login"),
   },
 ];
